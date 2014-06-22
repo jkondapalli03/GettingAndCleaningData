@@ -40,15 +40,15 @@ Repeating the same as above steps for test files
 3. y_test.txt
 Row Bind to create single dataset.
 
-## 2. Extract only the measurements on the mean and standard deviation for each measurement. 
+### 2. Extract only the measurements on the mean and standard deviation for each measurement. 
 Create a logical vector that contains TRUE values for the ID, mean and stdev columns and FALSE values for the others.
 Subset this data to keep only the necessary columns.
 
-## 3. Use descriptive activity names to name the activities in the data set
+### 3. Use descriptive activity names to name the activities in the data set
 Merge the mergedData set with the acitivityType.
 
-## 4. Appropriately label the data set with descriptive activity names.
+### 4. Appropriately label the data set with descriptive activity names.
 Use gsub function to clean up the data labels.
 
-## 5. Create a second, independent tidy data set with the average of each variable for each activity and each subject. 
+### 5. Create a second, independent tidy data set with the average of each variable for each activity and each subject. 
 Creating tidy dataset as per the project.
