@@ -51,13 +51,16 @@ Row Bind to create single dataset.
 
 ### 2. Extract only the measurements on the mean and standard deviation for each measurement. 
 Create a logical vector that contains TRUE values for the ID, mean and stdev columns and FALSE values for the others.
-Subset this data to keep only the necessary columns.
+Subset this data to keep only the necessary columns. -> Above LogicalVector == TRUE.
 
 ### 3. Use descriptive activity names to name the activities in the data set
 Merge the mergedData set with the acitivityType.
+The Merge is done by = activityId
+
 
 ### 4. Appropriately label the data set with descriptive activity names.
 Use gsub function to clean up the data labels.
+Example: tBodyAcc-mean()-X is changed to tBodyAccMeanX
 
 ### 5. Create a second, independent tidy data set with the average of each variable for each activity and each subject. 
-Creating tidy dataset as per the project.
+Creating tidy dataset as per the project. The Dataset is created in .txt format.

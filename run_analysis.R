@@ -78,8 +78,8 @@ mergedData = mergedData[logicalVector==TRUE];
 # 3 BEGIN
 ##########################################################################################################
 
-# Merge the mergedData set with the acitivityType. 
-mergedData = merge(mergedData,activityType,by='activityId',all.x=TRUE);
+# Merge the mergedData set with the acitivityLabels. 
+mergedData = merge(mergedData,activityLabels,by='activityId',all.x=TRUE);
 
 colNames  = colnames(mergedData); 
 
@@ -126,10 +126,10 @@ colnames(mergedData) = colNames;
 FinalData  = mergedData[,names(mergedData) != 'activityType'];
 
 # Summarizing the FinalData table to include just the mean of each variable for each activity and each subject
-tidyData    = aggregate(finalDataNoActivityType[,names(finalDataNoActivityType) != c('activityId','subjectId')],by=list(activityId=finalDataNoActivityType$activityId,subjectId = finalDataNoActivityType$subjectId),mean);
+tidyData    = aggregate(FinalData[,names(FinalData) != c('activityId','subjectId')],by=list(activityId=FinalData$activityId,subjectId = FinalData$subjectId),mean);
 
-# Merging the tidyData with activityType to include descriptive acitvity names
-tidyData    = merge(tidyData,activityType,by='activityId',all.x=TRUE);
+# Merging the tidyData with activityLabels to include descriptive acitvity names
+tidyData    = merge(tidyData,activityLabels,by='activityId',all.x=TRUE);
 
 # Export the tidyData set 
 write.table(tidyData, './tidyData.txt',row.names=TRUE,sep='\t');
